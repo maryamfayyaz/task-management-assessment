@@ -1,0 +1,12 @@
+# Node
+node_modules/
+
+# OS
+.DS_Store
+
+# Env
+.env
+
+# Jest
+jest-cache/
+jest-output/
