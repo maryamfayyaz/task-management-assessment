@@ -25,29 +25,6 @@ This document outlines how the Task Manager backend would be deployed and manage
 - Secrets like `DATABASE_URL`, `REDIS_URL`, and JWT keys are stored via platform dashboards.
 - Never commit `.env` to version control — use `.env.example` for shared config.
 
----
-
-## Infrastructure Layout Diagram
-```
-             ┌─────────────┐
-             │   Vercel    │
-             │ (Frontend)  │
-             └────┬────────┘
-                  │
-                  ▼
-         ┌──────────────────┐
-         │ Node.js Backend  │◄─────────────┐
-         │ (Render/Railway) │              │
-         └────┬─────────────┘              │
-              │                            │
- ┌────────────▼────────────┐     ┌─────────▼─────────┐
- │ PostgreSQL (Supabase)   │     │ Redis (Upstash)   │
- └─────────────────────────┘     └───────────────────┘
-```
-
-
----
-
 ## Deployment Strategy
 
 - CI/CD via GitHub Actions or platform-native (e.g. Vercel, Render)

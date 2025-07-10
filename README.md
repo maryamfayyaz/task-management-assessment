@@ -2,26 +2,6 @@
 
 A scalable, maintainable, backend API for a task management service. Built with Node.js, Express, PostgreSQL, Redis, and Sequelize.
 
----
-
-## System Architecture Diagram
-
-```
-                           │ HTTP
-                    ┌──────▼────────┐
-                    │   API Server  │
-                    │ (Node + Express) │
-                    └──────┬────────┘
-              ┌────────────┴────────────┐
-              │                         │
-      ┌───────▼────────┐        ┌───────▼────────┐
-      │  PostgreSQL DB │        │  Redis Pub/Sub │
-      │ (Sequelize ORM)│        │   (Events/Logs)│
-      └────────────────┘        └────────────────┘
-```
-
----
-
 ## Project Description & Setup
 
 This backend provides RESTful endpoints to manage tasks. It is built to support filtering, sorting, and message-based notifications via Redis.
@@ -109,3 +89,4 @@ http://localhost:3000/api-docs
 - AI-related endpoints (`/tasks/suggestions`) are stubbed — not production-ready
 - Rate-limiting and RBAC can be layered in with middleware later
 - Email delivery/logging events are simulated via console for now
+
